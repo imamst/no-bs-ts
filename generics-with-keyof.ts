@@ -25,7 +25,8 @@ interface EventMap {
 }
 
 function sendEvent<Name extends keyof EventMap>(
-    name: string, data: unknown
+    name: Name,
+    data: EventMap[Name]
 ): void {
     console.log([name, data]);
 }
